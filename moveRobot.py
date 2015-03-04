@@ -17,7 +17,8 @@ def turnOffMotors():
 atexit.register(turnOffMotors)
 
 ################################# DC motor test!
-myMotor = mh.getMotor(3)
+myMotor1 = mh.getMotor(1)
+myMotor2 = mh.getMotor(2)
 
 # set the speed to start, from 0 (off) to 255 (max speed)
 myMotor.setSpeed(150)
@@ -32,12 +33,12 @@ while (True):
 
 	print "\tSpeed up..."
 	for i in range(255):
-		myMotor.setSpeed(i)
+		myMotor1.setSpeed(i)
 		time.sleep(0.01)
 
 	print "\tSlow down..."
 	for i in reversed(range(255)):
-		myMotor.setSpeed(i)
+		myMotor1.setSpeed(i)
 		time.sleep(0.01)
 
 	print "Backward! "
@@ -45,12 +46,12 @@ while (True):
 
 	print "\tSpeed up..."
 	for i in range(255):
-		myMotor.setSpeed(i)
+		myMotor2.setSpeed(i)
 		time.sleep(0.01)
 
 	print "\tSlow down..."
 	for i in reversed(range(255)):
-		myMotor.setSpeed(i)
+		myMotor2.setSpeed(i)
 		time.sleep(0.01)
 
 	print "Release"
