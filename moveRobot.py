@@ -29,7 +29,7 @@ myMotor.run(Adafruit_MotorHAT.RELEASE);
 
 while (True):
 	print "Forward! "
-	myMotor.run(Adafruit_MotorHAT.FORWARD)
+	myMotor1.run(Adafruit_MotorHAT.FORWARD)
 
 	print "\tSpeed up..."
 	for i in range(255):
@@ -42,7 +42,7 @@ while (True):
 		time.sleep(0.01)
 
 	print "Backward! "
-	myMotor.run(Adafruit_MotorHAT.BACKWARD)
+	myMotor2.run(Adafruit_MotorHAT.BACKWARD)
 
 	print "\tSpeed up..."
 	for i in range(255):
