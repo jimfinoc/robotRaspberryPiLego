@@ -22,44 +22,42 @@ Motor2.setSpeed(0)
 Motor1.run(Adafruit_MotorHAT.FORWARD)
 Motor2.run(Adafruit_MotorHAT.FORWARD)
 
-print "\tSpeed up..."
-for i in range(255):
-    Motor1.setSpeed(i)
-    Motor2.setSpeed(i)
-    time.sleep(0.005)
+#print "\tSpeed up..."
+#for i in range(255):
+#    Motor1.setSpeed(i)
+#    Motor2.setSpeed(i)
+#    time.sleep(0.005)
+#
+#print "\tSlow down..."
+#for i in reversed(range(255)):
+#    Motor1.setSpeed(i)
+#    Motor2.setSpeed(i)
+#    time.sleep(0.005)
+#
+#print "Release"
+#Motor1.run(Adafruit_MotorHAT.RELEASE)
+#Motor2.run(Adafruit_MotorHAT.RELEASE)
+#time.sleep(2.0)
+#
+#
+#Motor1.run(Adafruit_MotorHAT.FORWARD)
+#Motor2.run(Adafruit_MotorHAT.BACKWARD)
 
-print "\tSlow down..."
-for i in reversed(range(255)):
-    Motor1.setSpeed(i)
-    Motor2.setSpeed(i)
-    time.sleep(0.005)
-
-print "Release"
-Motor1.run(Adafruit_MotorHAT.RELEASE)
-Motor2.run(Adafruit_MotorHAT.RELEASE)
-time.sleep(2.0)
-
-
-Motor1.run(Adafruit_MotorHAT.FORWARD)
-Motor2.run(Adafruit_MotorHAT.BACKWARD)
-
-
-
-print "\tSpeed up..."
-for i in range(255):
-    Motor1.setSpeed(i)
-    Motor2.setSpeed(i)
-    time.sleep(0.002)
-
-print "Release"
-Motor1.run(Adafruit_MotorHAT.RELEASE)
-Motor2.run(Adafruit_MotorHAT.RELEASE)
-time.sleep(2.0)
-
-Motor1.run(Adafruit_MotorHAT.FORWARD)
-Motor1.setSpeed(10)
-time.sleep(1.0)
-Motor1.run(Adafruit_MotorHAT.RELEASE)
+#print "\tSpeed up..."
+#for i in range(255):
+#    Motor1.setSpeed(i)
+#    Motor2.setSpeed(i)
+#    time.sleep(0.002)
+#
+#print "Release"
+#Motor1.run(Adafruit_MotorHAT.RELEASE)
+#Motor2.run(Adafruit_MotorHAT.RELEASE)
+#time.sleep(2.0)
+#
+#Motor1.run(Adafruit_MotorHAT.FORWARD)
+#Motor1.setSpeed(10)
+#time.sleep(1.0)
+#Motor1.run(Adafruit_MotorHAT.RELEASE)
 
 
 Motor1.setSpeed(0)
