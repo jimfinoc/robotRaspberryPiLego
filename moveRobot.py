@@ -177,7 +177,7 @@ def looping(inputValue="h"):
             moveBack()
         if inputValue=="t":
             rotateLeft()
-        if inputValue=="t":
+        if inputValue=="r":
             rotateRight()
         if inputValue=="d":
             turnLeft()
