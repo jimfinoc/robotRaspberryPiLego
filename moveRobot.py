@@ -1,30 +1,22 @@
 #!/usr/bin/python
-mh = Adafruit_MotorHAT(addr=0x60)
 from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
-
 import time
 import atexit
 
-def turnOffMotors():
-    mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
-        mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
-        mh.getMotor(3).run(Adafruit_MotorHAT.RELEASE)
-        mh.getMotor(4).run(Adafruit_MotorHAT.RELEASE)
-
-atexit.register(turnOffMotors)
-
-
-
 mh = Adafruit_MotorHAT(addr=0x60)
 
+def turnOffMotors():
+    mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
+    mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
+    mh.getMotor(3).run(Adafruit_MotorHAT.RELEASE)
+    mh.getMotor(4).run(Adafruit_MotorHAT.RELEASE)
+
+atexit.register(turnOffMotors)
 Motor1 = mh.getMotor(1)
 Motor2 = mh.getMotor(2)
 
-Motor1.setSpeed(200)
-Motor2.setSpeed(200)
 
-
-print "Forward! "
+print "Set conditions for stopped motors and moing forward! "
 Motor1.setSpeed(0)
 Motor2.setSpeed(0)
 Motor1.run(Adafruit_MotorHAT.FORWARD)
