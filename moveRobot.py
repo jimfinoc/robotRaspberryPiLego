@@ -76,10 +76,23 @@ def stop():
 def moveForward(timeSleeping=3):
     Motor1.run(Adafruit_MotorHAT.RELEASE)
     Motor2.run(Adafruit_MotorHAT.RELEASE)
-    Motor1.setSpeed(75)
-    Motor2.setSpeed(75)
+    Motor1.setSpeed(150)
+    Motor2.setSpeed(150)
     Motor2.run(Adafruit_MotorHAT.FORWARD)
     Motor1.run(Adafruit_MotorHAT.FORWARD)
+    time.sleep(timeSleeping)
+    Motor1.run(Adafruit_MotorHAT.RELEASE)
+    Motor2.run(Adafruit_MotorHAT.RELEASE)
+    Motor1.setSpeed(0)
+    Motor2.setSpeed(0)
+
+def moveBack(timeSleeping=3):
+    Motor1.run(Adafruit_MotorHAT.RELEASE)
+    Motor2.run(Adafruit_MotorHAT.RELEASE)
+    Motor1.setSpeed(75)
+    Motor2.setSpeed(75)
+    Motor2.run(Adafruit_MotorHAT.BACKWARD)
+    Motor1.run(Adafruit_MotorHAT.BACKWARD)
     time.sleep(timeSleeping)
     Motor1.run(Adafruit_MotorHAT.RELEASE)
     Motor2.run(Adafruit_MotorHAT.RELEASE)
@@ -130,7 +143,7 @@ def turnLeft(timeSleeping=1):
     Motor1.run(Adafruit_MotorHAT.RELEASE)
     Motor2.run(Adafruit_MotorHAT.RELEASE)
 
-turnLeft(1)
+#turnLeft(1)
 
 
 #def program():
@@ -141,7 +154,7 @@ turnLeft(1)
 
 def looping(inputValue="h"):
     while (inputValue!="q"):
-        print inputValue
+#        print inputValue
         if str(inputValue)=="h":
             print "---------------------------------"
             print "press the key and enter to "
@@ -160,7 +173,17 @@ def looping(inputValue="h"):
             print "---------------------------------"
         if inputValue=="f":
             moveForward()
-        inputValue = input("Enter your command: ")
+        if inputValue=="b":
+            moveBack()
+        if inputValue=="t":
+            rotateLeft()
+        if inputValue=="t":
+            rotateRight()
+        if inputValue=="d":
+            turnLeft()
+        if inputValue=="g":
+            turnRight()
+        inputValue = raw_input('Enter your command: ')
         print inputValue
 
 
