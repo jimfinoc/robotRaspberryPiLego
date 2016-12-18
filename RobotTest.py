@@ -2,10 +2,10 @@
 # Author: Tony DiCola
 # License: MIT License https://opensource.org/licenses/MIT
 import time
-
+print "time imported"
 # Import the Robot.py file (must be in the same directory as this file!).
 import Robot
-
+print "Robot imported"
 
 # Set the trim offset for each motor (left and right).  This is a value that
 # will offset the speed of movement of each motor in order to make them both
