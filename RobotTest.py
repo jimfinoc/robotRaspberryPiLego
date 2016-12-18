@@ -61,7 +61,7 @@ robot = Robot.Robot(left_trim=LEFT_TRIM, right_trim=RIGHT_TRIM)
 # robot.backward(150, 1.0)
 
 robot.forward(150, 3.0)
-robot.right(250,2)
+robot.left(200,3)
 robot.forward(250, 2.0)
 robot.right(250,2)
 
