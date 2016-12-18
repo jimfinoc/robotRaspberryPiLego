@@ -89,7 +89,7 @@ class Robot(object):
             time.sleep(seconds)
             self.stop()
 
-    def right(self, speed, seconds=None):
+    def pivotright(self, speed, seconds=None):
         """Spin to the right at the specified speed.  Will start spinning and
         return unless a seconds value is specified, in which case the robot will
         spin for that amount of time and then stop.
@@ -104,7 +104,7 @@ class Robot(object):
             time.sleep(seconds)
             self.stop()
 
-    def left(self, speed, seconds=None):
+    def pivotleft(self, speed, seconds=None):
         """Spin to the left at the specified speed.  Will start spinning and
         return unless a seconds value is specified, in which case the robot will
         spin for that amount of time and then stop.
@@ -114,6 +114,36 @@ class Robot(object):
         self._right_speed(speed)
         self._left.run(Adafruit_MotorHAT.FORWARD)
         self._right.run(Adafruit_MotorHAT.BACKWARD)
+        # If an amount of time is specified, move for that time and then stop.
+        if seconds is not None:
+            time.sleep(seconds)
+            self.stop()
+
+    def turnright(self, speed, seconds=None):
+        """Spin to the right at the specified speed.  Will start spinning and
+        return unless a seconds value is specified, in which case the robot will
+        spin for that amount of time and then stop.
+        """
+        # Set motor speed and move both forward.
+        self._left_speed(speed)
+        self._right_speed(speed)
+        self._left.run(Adafruit_MotorHAT.FORWARD/4)
+        self._right.run(Adafruit_MotorHAT.FORWARD)
+        # If an amount of time is specified, move for that time and then stop.
+        if seconds is not None:
+            time.sleep(seconds)
+            self.stop()
+
+    def turnleft(self, speed, seconds=None):
+        """Spin to the left at the specified speed.  Will start spinning and
+        return unless a seconds value is specified, in which case the robot will
+        spin for that amount of time and then stop.
+        """
+        # Set motor speed and move both forward.
+        self._left_speed(speed)
+        self._right_speed(speed)
+        self._left.run(Adafruit_MotorHAT.FORWARD)
+        self._right.run(Adafruit_MotorHAT.FORWARD/4)
         # If an amount of time is specified, move for that time and then stop.
         if seconds is not None:
             time.sleep(seconds)
