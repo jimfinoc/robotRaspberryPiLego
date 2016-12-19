@@ -10,16 +10,12 @@ eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()
-
 # img = cv2.imread('sachin.jpg')
 # gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
     # Our operations on the frame come here
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
     # Display the resulting frame
     # cv2.imshow('frame',gray)
-
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
     print faces
     for (x,y,w,h) in faces:
@@ -29,12 +25,9 @@ while(True):
         eyes = eye_cascade.detectMultiScale(roi_gray)
         for (ex,ey,ew,eh) in eyes:
             cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
-
 # cv2.imshow('img',img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-
-
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
