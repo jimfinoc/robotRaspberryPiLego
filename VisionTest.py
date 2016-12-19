@@ -25,15 +25,15 @@ while(True):
         eyes = eye_cascade.detectMultiScale(roi_gray)
         for (ex,ey,ew,eh) in eyes:
             cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
-# cv2.imshow('img',img)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-# When everything done, release the capture
-cap.release()
+cv2.imshow('img',img)
+cv2.waitKey(0)
 cv2.destroyAllWindows()
+#     if cv2.waitKey(1) & 0xFF == ord('q'):
+#         break
+
+# # When everything done, release the capture
+# cap.release()
+# cv2.destroyAllWindows()
 
 
 
